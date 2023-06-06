@@ -8,10 +8,81 @@ body {
 
 .btn-primary {
   background-color: #333;
-  border-color: yellow;
+  border-color: #333;
 }
 
 .header{
   color: yellow;
   outline: 1px solid yellow;
+}
+
+.btn-primary:hover .food-icon {
+  animation: floating 2s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-5px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+#moviePoster {
+  max-width: 200px;
+  max-height: 500px;
+  border: 5px solid yellow; /* Adicione uma borda */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adicione uma sombra */
+  transition: transform 0.3s ease-in-out; /* Adicione uma transição suave */
+}
+
+#moviePoster:hover {
+  transform: scale(1.05); /* Aumenta ligeiramente o tamanho do pôster ao passar o mouse */
+}
+
+#loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 9999;
+}
+
+#loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+#loading .spinner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
 }
