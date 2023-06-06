@@ -11,15 +11,25 @@
     <script defer src="/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@azure/cognitiveservices-translation-sdk/dist/browser/azure-cognitiveservices-translation-sdk.min.js"></script>
 
-    <title>Movie Night Generator</title>
+    <title>Movie Night</title>
 </head>
 
 <body>
-    <header class="header text-center">
-        <h1>Movie Night</h1>
-        <i>Este site irá definir o seu date de hoje</i>
+    <div id="loading">
+        <img src="/img/ingressos-de-cinema.png" alt="Loading" class="spinner">
+    </div>
+
+    <header class="header text-center d-flex align-items-center">
+        <a class="btn btn-primary" href="/pages/food.html">
+            <img class="food-icon" src="img/french-fries.png" alt="Food Icon">
+        </a>
+        <div class="mx-auto">
+            <h1>Movie Night</h1>
+            <i>Este site irá definir o seu date de hoje</i>
+        </div>
     </header>
 
     <div class="container my-4">
@@ -41,14 +51,39 @@
                         <h3 class="card-title">Escolha Aleatória de Filme</h3>
                         <p class="card-text">Descubra o filme a ser assistido</p>
                         <button id="btnRandomMovie" class="btn btn-primary">Escolher Filme Aleatório</button>
-                        <div id="movieTitle" class="mt-3"></div>
-                        <div class="mt-3">
-                            <h3 class="sinopse_filme">Sinopse</h3>
-                            <p id="movieOverview" class="resumo_filme"></p>
-                            <p id="movieReleaseDate" class="data_filme"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div id="terceiroQuadrado" class="card" style="display: none;">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Sinopse</h3>
+                        <i id="movieOverview" class="resumo_filme"></i>
+                        <div>
+                            <b id="movieReleaseDate"></b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div id="quartoQuadrado" class="card" style="display: none;">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Título</h3>    
+                        <b id="movieTitle"></b>
+                        <div class="card-body text-center">
+                            <img id="moviePoster" src="" alt="Poster do filme">
+                        <div class="card-body text-center">
+                            <span id="movieRunTime"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</body>
+
+</html>
