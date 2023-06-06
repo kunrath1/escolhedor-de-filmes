@@ -38,8 +38,8 @@ setTimeout(function() {
 }, 3000);
 
 $(document).ready(function() {
-    var apiKey = "759bad539ddefc7a0f8e919f353a24b0"; // Sua chave de API do TMDb
-    var azureTranslateApiKey = "c0e783b50cf84c61b15053cca807ce57"; // Sua chave de API do Azure Translate
+    var apiKey = "#$"; // Sua chave de API do TMDb
+    var azureTranslateApiKey = "#$"; // Sua chave de API do Azure Translate
     var azureTranslateEndpoint = "https://api.cognitive.microsofttranslator.com";
   
     async function obterFilmeAleatorio() {
